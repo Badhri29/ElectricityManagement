@@ -1,0 +1,210 @@
+/* Reset some default styles */
+body, h1, p, label, input, button {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4f6fa;
+    color: #222;
+    min-height: 100vh;
+}
+
+header {
+    background: #2d6cdf;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 60vh;
+    padding: 2rem 0;
+}
+
+form {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(44,108,223,0.07);
+    /* min-width: 320px; */
+    width: 500px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    font-weight: 450;
+}
+
+
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+    width: 180px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #bfc9d9;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus {
+    border: 1.5px solid #2d6cdf;
+    outline: none;
+}
+
+button[type="button"] {
+    background: #eaf1fb;
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.7rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+
+button[type="button"]:hover {
+    background: #d0e3fa;
+}
+
+.submit-btn {
+    display: block;
+    margin: 1rem auto 0 auto; /* Top margin, auto left/right centers the button */
+    background: #2d6cdf;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.6rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(44,108,223,0.07);
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+    background: #1b4fa0;
+    outline: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #f0f4fa;
+    color: #888;
+    font-size: 0.95rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.03);
+}
+
+/* New styles for form rows */
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    width: 100%;
+    
+}
+
+.form-row label {
+    flex: 0 0 180px; /* fixed width for label */
+    text-align: left;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.form-row input[type="text"],
+.form-row input[type="date"],
+.form-row input[type="time"] {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    border-bottom: black 1px solid;  /* Underline for labels */
+
+}
+
+.form-row input:focus{
+    border-color: #2d6cdf;
+}
+
+
+/* Responsive styles */
+@media (max-width: 900px) {
+    main form {
+        min-width: 260px;
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+    main {
+        padding: 1rem 0.2rem;
+    }
+    form {
+        min-width: 100%;
+        padding: 1rem 0.5rem;
+        box-shadow: none;
+        border-radius: 0;
+        align-items: stretch; /* Stretch children to full width */
+    }
+    label, input, button {
+        font-size: 1rem;
+    }
+    label {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 0.2rem;
+    }
+    input[type="text"],
+    input[type="date"],
+    input[type="time"] {
+        width: 100%;
+        margin-bottom: 0.7rem;
+    }
+    button[type="button"],
+    .submit-btn {
+        margin-left: 0;
+        margin-top: 0.3rem;
+        width: 100%;
+        align-self: stretch;
+    }
+    footer {
+        font-size: 0.85rem;
+        padding: 0.7rem 0;
+    }
+}
+
+/* Stack form fields vertically on very small screens */
+@media (max-width: 480px) {
+    form {
+        padding: 0.7rem 0.2rem;
+    }
+    label, input, button {
+        display: block;
+        width: 100%;
+    }
+    button[type="button"],
+    .submit-btn {
+        margin-top: 0.4rem;
+    }
+}
