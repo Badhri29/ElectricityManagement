@@ -1,5 +1,5 @@
 /* Reset some default styles */
-body, h1, p, label, input, button {
+body, h1, p, label, input, button, table, th, td {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,34 +7,30 @@ body, h1, p, label, input, button {
 }
 
 body {
-    background: #f4f6fa;
+    background: #f4f7fa;
     color: #222;
     min-height: 100vh;
 }
 
 header {
-    background: #2d6cdf;
+    background: #0078d7;
     color: #fff;
-    padding: 1.5rem 0;
+    padding: 24px 0 16px 0;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 60vh;
-    padding: 2rem 0;
+    max-width: 600px;
+    margin: 32px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px 24px 24px 24px;
 }
 
 form {
-    background: #fff;
-    padding: 2rem 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(44,108,223,0.07);
-    /* min-width: 320px; */
-    width: 500px;
+    margin-bottom: 32px;
 }
 
 label {
@@ -42,8 +38,6 @@ label {
     margin-bottom: 0.3rem;
     font-weight: 450;
 }
-
-
 
 input[type="text"],
 input[type="date"],
@@ -60,90 +54,119 @@ input[type="time"] {
 input[type="text"]:focus,
 input[type="date"]:focus,
 input[type="time"]:focus {
-    border: 1.5px solid #2d6cdf;
+    border: 1.5px solid #0078d7;
     outline: none;
 }
 
 button[type="button"] {
-    background: #eaf1fb;
+    background: #eaf3fb;
     border: none;
-    border-radius: 4px;
-    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    font-size: 1.2rem;
     cursor: pointer;
-    font-size: 1.1rem;
+    padding: 7px 10px;
+    margin-left: 6px;
     transition: background 0.2s;
 }
 
 button[type="button"]:hover {
-    background: #d0e3fa;
+    background: #d0e7fa;
 }
 
 .submit-btn {
     display: block;
     margin: 1rem auto 0 auto; /* Top margin, auto left/right centers the button */
-    background: #2d6cdf;
+    background: #0078d7;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 0.6rem 2rem;
-    font-size: 1.1rem;
+    border-radius: 6px;
+    padding: 10px 28px;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(44,108,223,0.07);
-    letter-spacing: 1px;
+    transition: background 0.2s;
+    margin-left: auto;
+    display: block;
 }
 
-.submit-btn:hover,
-.submit-btn:focus {
-    background: #1b4fa0;
-    outline: none;
+.submit-btn:hover {
+    background: #005fa3;
 }
 
 footer {
     text-align: center;
-    padding: 1rem 0;
-    background: #f0f4fa;
     color: #888;
+    padding: 18px 0 10px 0;
     font-size: 0.95rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.03);
+    background: none;
+    margin-top: 40px;
 }
 
 /* New styles for form rows */
 .form-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    width: 100%;
-    
+    margin-bottom: 18px;
 }
 
 .form-row label {
-    flex: 0 0 180px; /* fixed width for label */
-    text-align: left;
-    margin-right: 10px;
+    flex: 0 0 140px;
     font-weight: 500;
+    margin-right: 12px;
 }
 
 .form-row input[type="text"],
 .form-row input[type="date"],
 .form-row input[type="time"] {
-    flex: 1 1 auto;
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #bfc9d1;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s;
+    background: #f9fbfc;
+}
+
+.form-row input:focus {
+    border: 1.5px solid #0078d7;
+    outline: none;
+    background: #fff;
+}
+
+/* Table styles */
+table {
     width: 100%;
-    min-width: 0;
-    border-bottom: black 1px solid;  /* Underline for labels */
-
+    border-collapse: collapse;
+    background: #f9fbfc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
-.form-row input:focus{
-    border-color: #2d6cdf;
+th, td {
+    padding: 12px 10px;
+    text-align: center;
 }
 
+th {
+    background: #eaf3fb;
+    font-weight: 600;
+    color: #0078d7;
+    border-bottom: 2px solid #bfc9d1;
+}
+
+.readingValue{
+    text-align: left;
+    padding-left: 3rem;
+}
+
+tbody tr:nth-child(even) {
+    background: #f4f7fa;
+}
+
+tbody tr:hover {
+    background: #eaf3fb;
+}
 
 /* Responsive styles */
 @media (max-width: 900px) {
