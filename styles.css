@@ -12,19 +12,24 @@ body {
     min-height: 100vh;
 }
 
+/* Header styles */
 header {
     background: #0078d7;
     color: #fff;
     height: 70px;
+    padding-top: 10px;
     text-align: center;
-    align-content: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
+/* Main content styles */
 main {
     display: flex;
 }
+
 .form-container {
+    display: flex;
+    flex-direction: column;
     width: 500px;
     height: 350px;
     margin-top: 50px;
@@ -46,35 +51,6 @@ main {
     padding: 32px 24px 24px 24px;
 
 }
-form {
-    margin-bottom: 32px;
-
-}
-
-label {
-    display: inline-block;
-    margin-bottom: 0.3rem;
-    font-weight: 450;
-}
-
-input[type="text"],
-input[type="date"],
-input[type="time"] {
-    width: 180px;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #bfc9d9;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border 0.2s;
-}
-
-input[type="text"]:focus,
-input[type="date"]:focus,
-input[type="time"]:focus {
-    border: 1.5px solid #0078d7;
-    outline: none;
-}
 
 button[type="button"] {
     background: #eaf3fb;
@@ -82,8 +58,8 @@ button[type="button"] {
     border-radius: 6px;
     font-size: 1.2rem;
     cursor: pointer;
-    padding: 7px 10px;
-    margin-left: 6px;
+    width: 40px;
+    height: 40px;
     transition: background 0.2s;
 }
 
@@ -91,9 +67,48 @@ button[type="button"]:hover {
     background: #d0e7fa;
 }
 
+/* New styles for form rows */
+.form-row {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.form-row label {
+    text-align: left;
+    align-content: center;
+    font-weight: 450;
+    flex: 0 0 135px;
+    height: 100%;
+    width: 100%;
+}
+
+.form-row input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #bfc9d1;
+    border-radius: 6px;
+    font-size: 1rem;
+    min-width: 100px;
+    transition: border 0.2s;
+    background: #f9fbfc;
+    text-align: left;
+    height: 40px;
+}
+
+.form-row input:hover {
+    border: 1.5px solid #050907a6;
+    background: #c3c3c366;
+}
+
+.form-row input:focus{
+    border: 1px solid #7dd3bfcf;
+    outline: none;
+    background-color: #e4e8ea;
+}
+
 .submit-btn {
-    display: block;
-    margin: 1rem auto 0 auto; /* Top margin, auto left/right centers the button */
     background: #0078d7;
     color: #fff;
     border: none;
@@ -103,53 +118,18 @@ button[type="button"]:hover {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s;
-    margin-left: auto;
-    display: block;
+    transition: font-size 0.2s;
+    margin-top: auto;
+    align-self: center;
+    height: 40px;
+    width: 200px;
 }
 
 .submit-btn:hover {
     background: #005fa3;
+    font-size: 1.05rem;
 }
 
-footer {
-    text-align: center;
-    color: #888;
-    padding: 18px 0 10px 0;
-    font-size: 0.95rem;
-    background: none;
-    margin-top: 40px;
-}
-
-/* New styles for form rows */
-.form-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 18px;
-}
-
-.form-row label {
-    flex: 0 0 140px;
-    font-weight: 500;
-    margin-right: 12px;
-}
-
-.form-row input[type="text"],
-.form-row input[type="date"],
-.form-row input[type="time"] {
-    flex: 1;
-    padding: 8px 12px;
-    border: 1px solid #bfc9d1;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border 0.2s;
-    background: #f9fbfc;
-}
-
-.form-row input:focus {
-    border: 1.5px solid #0078d7;
-    outline: none;
-    background: #fff;
-}
 
 /* Table styles */
 table {
@@ -186,66 +166,13 @@ tbody tr:hover {
     background: #eaf3fb;
 }
 
-/* Responsive styles */
-@media (max-width: 900px) {
-    main form {
-        min-width: 260px;
-        padding: 1.5rem 1rem;
-    }
-}
 
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.3rem;
-    }
-    main {
-        padding: 1rem 0.2rem;
-    }
-    form {
-        min-width: 100%;
-        padding: 1rem 0.5rem;
-        box-shadow: none;
-        border-radius: 0;
-        align-items: stretch; /* Stretch children to full width */
-    }
-    label, input, button {
-        font-size: 1rem;
-    }
-    label {
-        text-align: left;
-        width: 100%;
-        margin-bottom: 0.2rem;
-    }
-    input[type="text"],
-    input[type="date"],
-    input[type="time"] {
-        width: 100%;
-        margin-bottom: 0.7rem;
-    }
-    button[type="button"],
-    .submit-btn {
-        margin-left: 0;
-        margin-top: 0.3rem;
-        width: 100%;
-        align-self: stretch;
-    }
-    footer {
-        font-size: 0.85rem;
-        padding: 0.7rem 0;
-    }
-}
-
-/* Stack form fields vertically on very small screens */
-@media (max-width: 480px) {
-    form {
-        padding: 0.7rem 0.2rem;
-    }
-    label, input, button {
-        display: block;
-        width: 100%;
-    }
-    button[type="button"],
-    .submit-btn {
-        margin-top: 0.4rem;
-    }
+/* Footer styles */
+footer {
+    text-align: center;
+    color: #888;
+    padding: 18px 0 10px 0;
+    font-size: 0.95rem;
+    background: none;
+    margin-top: 40px;
 }
