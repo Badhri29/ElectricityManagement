@@ -54,38 +54,55 @@ document.addEventListener('DOMContentLoaded', function() {
     timePicker.addEventListener('blur', function() {
         setTimeout(() => { timePicker.style.display = 'none'; }, 200);
     });
+
+
+
+// Handle form submission to add new row in the table
+    document.querySelector('.submit-btn').addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Validate required fields
+        const reading = document.getElementById('current_reading').value.trim();
+        const date = document.getElementById('date_field').value.trim();
+        const time = document.getElementById('time_field').value.trim();
+
+        if (!reading || !date || !time) {
+            alert('Please fill all required fields.');
+            return;
+        }
+
+        // Create new row
+        const tableBody = document.getElementById('dataTableBody');
+        const newRow = document.createElement('tr');
+
+        // Fill only the columns you have data for, others left blank or calculated as needed
+        newRow.innerHTML = `
+            <td></td>
+            <td>${date}</td>
+            <td>${time}</td>
+            <td>${reading}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        `;
+
+        tableBody.insertBefore(newRow, tableBody.firstChild);
+
+        // Remove rows if more than 8
+        // while (tableBody.rows.length > 8) {
+        //     tableBody.deleteRow(-1);
+        // }
+
+        // Reset form fields
+        document.getElementById('createForm').reset();
+        setCurrentDateTime();
+    });
 });
 
-document.getElementById('createForm').addEventListener('submit', function (e) {
-    e.preventDefault();
 
-    // Get form values
-    const reading = document.getElementById('current_reading').value;
-    const date = document.getElementById('date_field').value;
-    const time = document.getElementById('time_field').value;
 
-    // Create new row
-    const tableBody = document.getElementById('dataTableBody');
-    const newRow = document.createElement('tr');
 
-    newRow.innerHTML = `
-        <td class="readingValue">${reading}</td>
-        <td class="dateValue">${date}</td>
-        <td class="timeValue">${time}</td>
-    `;
-
-    // Add new row to top
-    tableBody.insertBefore(newRow, tableBody.firstChild);
-
-    // Remove rows if more than 5
-    while (tableBody.rows.length > 5) {
-        tableBody.deleteRow(-1); // Remove last row
-    }
-
-    // Clear the form and reset date/time to current
-    document.getElementById('createForm').reset();
-    setCurrentDateTime();
-});
 
 window.addEventListener('DOMContentLoaded', function() {
     // Set today's date
