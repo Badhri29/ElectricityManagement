@@ -9,15 +9,22 @@
 </head>
 
 <body>
+
+    <!-- Header of the webPage -->
     <header>
         <h1>Electricity Management</h1>
     </header>
+
+
+    <!-- Main content area -->
     <main>
+
+        <!-- Data Input Area -->
         <div class="form-container" id="formContainer">
             <form action="" id="createForm">
                 <div class="form-row">
                     <label for="current_reading"><b>Current reading :</b></label>
-                    <input type="text" id="current_reading" name="current_reading" required>
+                    <input type="number" id="current_reading" name="current_reading" required>
                 </div>
 
                 <div class="form-row">
@@ -33,29 +40,42 @@
                     <input type="text" id="time_field" name="time_field" required placeholder="hh:mm AM/PM">
                     <button type="button" class="set-time-btn" id="setTimeNowBtn" title="Set current time"
                         style="margin-left:4px;">⏰</button>
-                </div> 
+                </div>
             </form>
             <button type="submit" class="submit-btn">Submit</button>
         </div>
+
+        <!-- Data Display Area -->
         <div class="table-container" id="tableContainer">
             <table>
                 <thead>
                     <tr>
-                        <th>Reading</th>
-                        <th>Created Date</th>
-                        <th>Created Time</th>
+                        <th>Last reading day Gap</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Current Reading MeterBox</th>
+                        <th>This month Reading</th>
+                        <th>Per Cycle Reading</th>
+                        <th>This Month Price</th>
+                        <th>Bill amount of every Cycle</th>
                     </tr>
                 </thead>
                 <tbody id="dataTableBody">
-
+                    
+                    <!-- More rows can be added dynamically -->
                 </tbody>
             </table>
         </div>
     </main>
+
+    <!-- Footer of the webPage -->
+    <footer>
+        <p>&copy; 2023 Electricity Management System</p>
+    </footer>
+
+
 </body>
-<footer>
-    <p>&copy; 2023 Electricity Management System</p>
-</footer>
+
 <script src="script.js"></script>
 
 </html>
