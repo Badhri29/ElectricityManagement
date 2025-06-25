@@ -77,14 +77,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Fill only the columns you have data for, others left blank or calculated as needed
         newRow.innerHTML = `
-            <td></td>
+            <td>1</td>
             <td>${date}</td>
             <td>${time}</td>
             <td>${reading}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>115</td>
+            <td>2</td>
+            <td>₹135</td>
+            <td>₹56</td>
         `;
 
         tableBody.insertBefore(newRow, tableBody.firstChild);
