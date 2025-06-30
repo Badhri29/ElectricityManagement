@@ -81,10 +81,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <td>${date}</td>
             <td>${time}</td>
             <td>${reading}</td>
-            <td>115</td>
-            <td>2</td>
-            <td>₹135</td>
-            <td>₹56</td>
+            <td>1234</td>
+            <td>1233</td>
+            <td>₹9999</td>
+            <td>₹999</td>
         `;
 
         tableBody.insertBefore(newRow, tableBody.firstChild);
@@ -97,6 +97,28 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset form fields
         document.getElementById('createForm').reset();
         setCurrentDateTime();
+
+        // ✅ Send data to Java backend
+        // const formData = new FormData();
+        // formData.append("current_reading", reading);
+        // formData.append("date_field", date);
+        // formData.append("time_field", time);
+
+        // fetch("http://localhost:8080/ElectricityApp/submit", {
+        //     method: "POST",
+        //     body: formData
+        // })
+        // .then(res => res.text())
+        // .then(data => {
+        //     console.log("Response from backend:", data);
+        //     alert("Backend says: " + data);
+        // })
+        // .catch(error => {
+        //     console.error("Error sending data to backend:", error);
+        //     alert("Failed to send data to backend.");
+        // });
+
+        document.getElementById('current_reading').focus();
     });
 });
 
