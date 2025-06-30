@@ -123,67 +123,55 @@ font-size: 1.05rem;
 
 
 .table-container {
-width: 800px;
-height: 400px;
-margin-right: 80px;
-margin-top: 50px;
-margin-left: 5px;
-margin-bottom: 20px;
-background: white;
-border-radius: 12px;
-box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-overflow: auto;
-background-clip: padding-box;
+    width: 800px;
+    height: 400px;
+    margin-right: 80px;
+    margin-top: 50px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 400px; /* or your preferred height */
+    background-clip: padding-box;
 }
 
-/* Table styles */
 table {
-width: 100%;
-border-collapse: collapse;
-background: #f9fbfc;
-border-radius: 8px;
-table-layout: fixed;
-overflow: hidden;
-display: block;
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9fbfc;
+    border-radius: 8px;
+    table-layout: fixed;
+    /* overflow: hidden;  Remove this if present */
 }
 
-thead, tbody {
-display: block;
-width: 100%;
-}
-
+/* Remove height from tbody to allow natural growth */
 tbody {
-height: 300px; /* Adjust as needed for your layout */
-overflow-y: auto;
-overflow-x: hidden;
+    /* height: 300px;  Remove this line */
 }
 
-thead {
-height: 70px;
-background: #6181e2;
-color: #ffffff;
-}
-
+/* Freeze table head */
 thead th {
-font-size: small;
-position: sticky;
-top: 0;
-z-index: 2;
-background: #6181e2;
-color: #fff;
-white-space: normal;   /* Allow text to wrap */
-width: 12.5%; /* 8 columns, adjust if your column count changes */  
-/* box-sizing: border-box;  */
-text-align: center;
-/* font-weight: 500; */
-padding: 7px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #6181e2;
+    color: #fff;
+    white-space: normal;
+    text-align: center;
+    padding: 7px;
+    font-size: small;
 }
 
 td {
+    font-size: small;
 width: 12.5%; 
+height: 40px;
 /* box-sizing: border-box;  */
 text-align: center;
-padding: 10px;
+padding: 5px;
 /* font-weight: 500; */
 white-space: nowrap;
 box-shadow: #888 0.1px 0px 0px;
@@ -277,7 +265,7 @@ thead tr{
     height: 70px;
 }
 tbody td{
-
+    font-size: x-small;
 }
 #createForm{
     padding: 20px;
@@ -324,18 +312,21 @@ tbody td{
 }
 thead th{
     font-size: xx-small;
+    padding: 0px;
 }
 thead tr{
-    height: 70px;
+    height: 60px;
     
 }
 tbody tr{
-    height: 50px;
+    /* height: 50px; */
     width: 400px;
 }
 
 tbody td{
-
+    font-size: xx-small;
+    padding: 0px;
+    height: 40px;
 }
 #createForm{
     padding: 20px;
